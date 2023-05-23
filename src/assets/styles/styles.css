@@ -1,0 +1,30 @@
+
+body {
+    margin:0;
+    padding:0;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: #e0e0e0;
+}
+.row {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.todolist {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border:1px solid #cbc7c7;
+    list-style: none;
+}
+.todoitem-wrapper {
+    padding:10px 0;
+    border-bottom: 1px solid #ddd;
+}
+.todoitem-title input{
+    margin-right: 10px;
+}
