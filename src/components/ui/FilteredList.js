@@ -1,13 +1,16 @@
-import React from 'react'
-import { getAll } from '../../services/todo';
+import React, { useContext } from 'react'
+import { TodoContext } from '../../context/TodosContext';
 import { TodoItem } from './TodoItem';
 
 export const FilteredList = () => {
-    const todos=getAll();
+  const {initialTodos}=useContext(TodoContext);
   return (
     <ul className='list'>
-        {todos.map((value)=>(
-            <TodoItem title={value.title} completed={value.completed}/>
+        {initialTodos.map((value)=>(
+          <TodoItem 
+            key={value.id}
+            todo={value}
+            />
         ))}
     </ul>
   )

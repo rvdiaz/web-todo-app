@@ -4,7 +4,7 @@ import { InputBox } from './InputBox'
 
 export const Header = () => {
   return (
-    <div class="header">
+    <div className="header">
         <h1>{texts.HEADER_TEXT}</h1>
         <InputBox/>
     </div>

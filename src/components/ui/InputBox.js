@@ -3,7 +3,7 @@ import { AddTodoInput } from './AddTodoInput'
 
 export const InputBox = () => {
   return (
-    <div class="inputWrapper">
+    <div className="inputWrapper">
         <AddTodoInput/>
     </div>
   )

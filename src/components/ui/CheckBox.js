@@ -1,17 +1,17 @@
 import React from 'react'
 
 export const CheckBox = (props) => {
-    const {check,setchecked}=props;
+    const {checked,updateTodo}=props;
 
     const handleChange=(e)=>{
         const {checked}=e.target;
-        setchecked(checked);
+        updateTodo(checked);
     }
 
   return (
     <input 
         type='checkbox' 
-        checked={check} 
+        checked={checked} 
         onChange={handleChange}/>
   )
 }
