@@ -83,3 +83,10 @@ body {
 .filterFooterWrapper .active {
     outline: 1px solid #af2f2f33;
 }
+.no-products-wrapper {
+    margin: 20px auto;
+}
+.no-products-title {
+    text-align: center;
+    font-style: italic;
+}

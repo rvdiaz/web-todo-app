@@ -37,12 +37,24 @@ export const TodoContextProvider=(props)=>{
         }
     }
 
+    const getActiveTodo=()=>{
+        const activeTodos=todos.filter(todo=>!todo.completed);
+        return activeTodos;
+    }
+
+    const getCompletedTodo=()=>{
+        const activeTodos=todos.filter(todo=>todo.completed);
+        return activeTodos;
+    }
+
     return (
         <TodoContext.Provider 
             value={{
                 initialTodos:todos,
-                addNewTodo:addNewTodo,
-                updateTodo:updateTodo
+                addNewTodo,
+                updateTodo,
+                getActiveTodo,
+                getCompletedTodo
             }}
         >
             {props.children}

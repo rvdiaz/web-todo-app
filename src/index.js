@@ -6,6 +6,7 @@ import './assets/styles/styles.css';
 import { TodoContextProvider } from './context/TodosContext';
 import { ModeInputProvider } from './context/ModeInputContext';
 import { InputValueProvider } from './context/InputValueContext';
+import { FilterDisplayProvider } from './context/TodoDisplayContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,7 +15,9 @@ root.render(
     <TodoContextProvider>
       <ModeInputProvider>
         <InputValueProvider>
-          <App/>
+          <FilterDisplayProvider>
+            <App/>
+          </FilterDisplayProvider>
         </InputValueProvider>
       </ModeInputProvider>
     </TodoContextProvider>
