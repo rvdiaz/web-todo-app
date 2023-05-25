@@ -3,8 +3,9 @@ import { TodoContext } from '../../context/TodosContext'
 import { ButtonFooter } from './ButtonFooter'
 import { FilterFooter } from './FilterFooter'
 
-export const Footer = () => {
+const Footer = () => {
   const {initialTodos}=useContext(TodoContext);
+
   return (
     <div className='footer'>
         <div className="buttonFooterWrapper">
@@ -17,3 +18,5 @@ export const Footer = () => {
     </div>
   )
 }
+
+export default React.memo(Footer);

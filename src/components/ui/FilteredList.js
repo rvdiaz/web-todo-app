@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { InputSearchContext } from '../../context/InputSearchContext';
 import { FilterDisplayContext } from '../../context/FilterDisplayContext';
 import { TodoContext } from '../../context/TodosContext';
@@ -12,28 +12,35 @@ export const FilteredList = () => {
   const {filterType}=useContext(FilterDisplayContext);
   const {valueSearch}=useContext(InputSearchContext);
   const {mode}=useContext(ModeInputContext);
-  let displayProducts='';
+  const [todos, settodos] = useState([]);
 
+  const filterList=useCallback(()=>{
+    let displayProducts='';
+    switch (filterType) {
+      case filtersObject.completed:
+        displayProducts=getCompletedTodo(mode,valueSearch);
+        break;
+      case filtersObject.active:
+        displayProducts=getActiveTodo(mode,valueSearch);
+        break;
+      case filtersObject.search:
+        displayProducts=getSearchTodo(valueSearch);
+        break;
+      default:
+        displayProducts=((mode!=Modes.search) ? initialTodos : getSearchTodo(valueSearch))
+    }
+    settodos(displayProducts);
+  },[mode,filterType,initialTodos,valueSearch])
 
-  switch (filterType) {
-    case filtersObject.completed:
-      displayProducts=getCompletedTodo(mode,valueSearch);
-      break;
-    case filtersObject.active:
-      displayProducts=getActiveTodo(mode,valueSearch);
-      break;
-    case filtersObject.search:
-      displayProducts=getSearchTodo(valueSearch);
-      break;
-    default:
-      displayProducts=((mode!=Modes.search) ? initialTodos : getSearchTodo(valueSearch))
-  }
- 
+   useEffect(() => { 
+    filterList();
+   }, [filterList]) 
+  
   return (
     <ul className='list'>
         {
-        displayProducts.length > 0
-        ? displayProducts.map((value)=>(
+        todos.length > 0
+        ? todos.map((value)=>(
           <TodoItem 
             key={value.id}
             todo={value}

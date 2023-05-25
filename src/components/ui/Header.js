@@ -2,7 +2,7 @@ import React from 'react'
 import { texts } from '../../assets/text/text'
 import { InputBox } from './InputBox'
 
-export const Header = () => {
+const Header = () => {
   return (
     <div className="header">
         <h1>{texts.HEADER_TEXT}</h1>
@@ -10,3 +10,5 @@ export const Header = () => {
     </div>
   )
 }
+
+export default React.memo(Header);
