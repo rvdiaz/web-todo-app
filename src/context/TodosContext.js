@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Modes } from '../util/modes';
 
 export const TodoContext=React.createContext({
     todos:[]
@@ -37,14 +38,27 @@ export const TodoContextProvider=(props)=>{
         }
     }
 
-    const getActiveTodo=()=>{
-        const activeTodos=todos.filter(todo=>!todo.completed);
+    const getActiveTodo=(mode,value)=>{
+        let tod=todos;
+        if(mode==Modes.search)
+            tod=getSearchTodo(value);
+        const activeTodos=tod.filter(todo=>!todo.completed);
         return activeTodos;
     }
 
-    const getCompletedTodo=()=>{
-        const activeTodos=todos.filter(todo=>todo.completed);
+    const getCompletedTodo=(mode,value)=>{
+        let tod=todos;
+        if(mode==Modes.search)
+            tod=getSearchTodo(value);
+        const activeTodos=tod.filter(todo=>todo.completed);
         return activeTodos;
+    }
+
+    const getSearchTodo=(value)=>{
+        if(value=='')
+            return todos;
+        const searchTodos=todos.filter(todo=>todo.title.includes(value));
+        return searchTodos;
     }
 
     return (
@@ -54,7 +68,8 @@ export const TodoContextProvider=(props)=>{
                 addNewTodo,
                 updateTodo,
                 getActiveTodo,
-                getCompletedTodo
+                getCompletedTodo,
+                getSearchTodo
             }}
         >
             {props.children}

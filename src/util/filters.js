@@ -1,7 +1,8 @@
 export const filtersObject={
     all:'All',
     active:'Active',
-    completed:"Completed"
+    completed:"Completed",
+    search:"Search"
 }
 
 export const filterObjectArray=[filtersObject.all,filtersObject.active,filtersObject.completed];

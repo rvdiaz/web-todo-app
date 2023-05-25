@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { FilterDisplayContext } from '../../context/TodoDisplayContext';
+import { FilterDisplayContext } from '../../context/FilterDisplayContext';
 import { filterObjectArray } from '../../util/filters';
 
 export const FilterFooter = () => {

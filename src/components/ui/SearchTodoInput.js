@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { InputSearchContext } from '../../context/InputSearchContext';
+import { FilterDisplayContext } from '../../context/FilterDisplayContext';
+import { filtersObject } from '../../util/filters';
+
 
 export const SearchTodoInput = () => {
-    const [value, setvalue] = useState('');
+    const {valueSearch,handleChangeSearch}=useContext(InputSearchContext);
+    const {changehandlerType}=useContext(FilterDisplayContext);
 
     const handlerValue=(e)=>{
       e.preventDefault();
-      setvalue(value);
+      handleChangeSearch(e.target.value);
+      changehandlerType(filtersObject.search);
     }
 
     return (
@@ -13,7 +19,7 @@ export const SearchTodoInput = () => {
         className='form-control'
         type='text' 
         placeholder="Search todo"
-        value={value}
+        value={valueSearch}
         onChange={handlerValue}
         />
     )

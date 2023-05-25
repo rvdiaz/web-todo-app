@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className="buttonFooterWrapper">
             <ButtonFooter/>
             <div className="">
-                <span>| {initialTodos.length} items left</span>
+                <span>{initialTodos.length} items left</span>
             </div>
         </div>
         <FilterFooter/>

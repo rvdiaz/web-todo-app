@@ -5,8 +5,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './assets/styles/styles.css';
 import { TodoContextProvider } from './context/TodosContext';
 import { ModeInputProvider } from './context/ModeInputContext';
-import { InputValueProvider } from './context/InputValueContext';
-import { FilterDisplayProvider } from './context/TodoDisplayContext';
+import { InputValueProvider } from './context/InputAdderContext';
+import { FilterDisplayProvider } from './context/FilterDisplayContext';
+import { InputSearchProvider } from './context/InputSearchContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,7 +17,9 @@ root.render(
       <ModeInputProvider>
         <InputValueProvider>
           <FilterDisplayProvider>
-            <App/>
+            <InputSearchProvider>
+             <App/>
+            </InputSearchProvider>
           </FilterDisplayProvider>
         </InputValueProvider>
       </ModeInputProvider>

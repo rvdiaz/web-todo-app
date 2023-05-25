@@ -48,11 +48,16 @@ body {
 .header input:focus {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);;
 }
+.buttonFooterWrapper {
+    margin: 0 10px 0 0;
+    display: flex;
+}
 .buttonFooterWrapper .button {
     display: inline-block;
     width: 20px;
     height: 20px;
     margin: 0 5px;
+    cursor: pointer;
 }
 .buttonFooterWrapper .add {
     background: url('/src/assets/images/add.svg');
@@ -68,8 +73,8 @@ body {
     background-color: #F4FCE8;
     border-top: 1px solid #ddd;
 }
-.buttonFooterWrapper {
-    display: flex;
+.buttonFooterWrapper .inactive {
+    opacity: 0.3;
 }
 .filterFooterWrapper {
     display: flex;
