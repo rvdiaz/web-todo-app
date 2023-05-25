@@ -1,13 +1,21 @@
-import React, { useState } from 'react'
-import { TodoInput } from './TodoInput';
+import React, { useContext } from 'react'
+import { InputValueContext } from '../../context/InputValueContext';
 
 export const AddTodoInput = () => {
-    const [value, setvalue] = useState('');
+  const {inputValue,handleInputChange}=useContext(InputValueContext);
+
+  const handlerChange=(e)=>{
+    e.preventDefault();
+    handleInputChange(e.target.value);
+  }
+
   return (
-    <TodoInput
-        placeholder="Add New"
-        valueInput={value}
-        handlerInput={setvalue}
+    <input 
+      className='form-control'
+      type='text' 
+      placeholder="Add new"
+      value={inputValue}
+      onChange={handlerChange}
     />
   )
 }

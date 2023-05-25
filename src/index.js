@@ -4,13 +4,19 @@ import { App } from './components/wrappers/App';
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/styles/styles.css';
 import { TodoContextProvider } from './context/TodosContext';
+import { ModeInputProvider } from './context/ModeInputContext';
+import { InputValueProvider } from './context/InputValueContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <TodoContextProvider>
-      <App/>
+      <ModeInputProvider>
+        <InputValueProvider>
+          <App/>
+        </InputValueProvider>
+      </ModeInputProvider>
     </TodoContextProvider>
   </React.StrictMode>
 );
