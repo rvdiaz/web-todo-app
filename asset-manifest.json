@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/web-todo-app/static/css/main.d8459e8f.css",
+    "main.js": "/web-todo-app/static/js/main.f550389f.js",
+    "index.html": "/web-todo-app/index.html",
+    "static/media/search.svg": "/web-todo-app/static/media/search.efb43b797963a63d6736.svg",
+    "static/media/add.svg": "/web-todo-app/static/media/add.5451be434ac1b21aa748.svg",
+    "main.d8459e8f.css.map": "/web-todo-app/static/css/main.d8459e8f.css.map",
+    "main.f550389f.js.map": "/web-todo-app/static/js/main.f550389f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8459e8f.css",
+    "static/js/main.f550389f.js"
+  ]
+}
