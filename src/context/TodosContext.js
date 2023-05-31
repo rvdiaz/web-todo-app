@@ -9,17 +9,17 @@ export const TodoContextProvider=(props)=>{
     const [todos, settodos] = useState([
         {
             id:0,
-            title:'learn javascript',
-            completed:false
+            title:'todo app',
+            completed:true
         },
         {
             id:1,
-            title:'learn react',
+            title:'calculator',
             completed:false
         },
         {
             id:2,
-            title:'learn react hooks',
+            title:'BMI Calculator',
             completed:false
         }
     ]);
